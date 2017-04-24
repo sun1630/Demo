@@ -17,7 +17,7 @@ define(['plugins/router', 'durandal/app', 'knockout'], function (router, app, ko
             { route:['','index'], title: 'menu', moduleId: 'Hello/menu', nav: true },
             { route: 'content', title: 'content', moduleId: 'Hello/content', nav: true }
         ]).buildNavigationModel();
-            
+              
         return router.activate();
     }
 
