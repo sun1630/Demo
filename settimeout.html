@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>setTimeout延迟</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            //blur 事件
+            document.getElementById("txt-input").onblur = function () {
+                var beginBlur = document.createTextNode("blur事件开始");
+                //document.getElementById("div-content").appendChild(beginBlur);
+
+                console.log("begin blur  " + (new Date()).getHours() + ":" + (new Date()).getMinutes() + ":" + (new Date()).getSeconds() + " " + (new Date()).getMilliseconds());
+                const self = this;
+                //window.setTimeout(function () {
+                //var beginSetTimeout = document.createTextNode("setTimeout事件开始");
+                //document.getElementById("div-content").appendChild(beginSetTimeout);
+
+                //console.log("begin blur timeout " + (new Date()).getHours() + ":" + (new Date()).getMinutes() + ":" + (new Date()).getSeconds() + " " + (new Date()).getMilliseconds());
+                for (var i = 0; i < 100000000; i++) {
+                    if (i % 10000000 == 0) {
+                        //console.log("blur===" + i + "===  " + (new Date()).getHours() + ":" + (new Date()).getMinutes() + ":" + (new Date()).getSeconds() + " " + (new Date()).getMilliseconds());
+                    }
+                }
+
+                //var endSetTimeout = document.createTextNode("setTimeout事件结束");
+                //document.getElementById("div-content").appendChild(endSetTimeout);
+                //console.log("end blur timeout " + (new Date()).getHours() + ":" + (new Date()).getMinutes() + ":" + (new Date()).getSeconds() + " " + (new Date()).getMilliseconds());
+                //}, 10)
+                var endBlur = document.createTextNode("blur事件结束");
+                //document.getElementById("div-content").appendChild(endBlur);
+                console.log("end blur  " + (new Date()).getHours() + ":" + (new Date()).getMinutes() + ":" + (new Date()).getSeconds() + " " + (new Date()).getMilliseconds());
+            }
+            //click 事件
+            document.getElementById("btn-click").onclick = function () {
+
+                console.log("begin click  " + (new Date()).getHours() + ":" + (new Date()).getMinutes() + ":" + (new Date()).getSeconds() + " " + (new Date()).getMilliseconds());
+                const self = this;
+                window.setTimeout(function () {
+                    console.log("begin click timeout " + (new Date()).getHours() + ":" + (new Date()).getMinutes() + ":" + (new Date()).getSeconds() + " " + (new Date()).getMilliseconds());
+                    for (var i = 0; i <= 100000; i++) {
+                        if (i % 10000 == 0) {
+                            //console.log("click===" + i + "=====" + (new Date()).getHours() + ":" + (new Date()).getMinutes() + ":" + (new Date()).getSeconds() + " " + (new Date()).getMilliseconds())
+                        }
+                    }
+                    console.log("end click timeout " + (new Date()).getHours() + ":" + (new Date()).getMinutes() + ":" + (new Date()).getSeconds() + " " + (new Date()).getMilliseconds());
+                }, 50);
+                console.log("end click   " + (new Date()).getHours() + ":" + (new Date()).getMinutes() + ":" + (new Date()).getSeconds() + " " + (new Date()).getMilliseconds());
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <input type="text" id="txt-input" />
+    <button type="button" id="btn-click" accesskey="T">点击</button>
+
+    <div id="div-content">
+
+    </div>
+
+
+</body>
+
+</html>
